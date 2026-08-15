@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 font-sans antialiased;
+  background-image:
+    radial-gradient(circle at top, rgba(30, 41, 59, 0.65), transparent 26%),
+    linear-gradient(180deg, rgba(15, 23, 42, 1), rgba(2, 6, 23, 1));
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.light body,
+body.light {
+  @apply bg-slate-50 text-slate-900;
+  background-image:
+    radial-gradient(circle at top left, rgba(31, 167, 92, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(248, 250, 252, 1), rgba(241, 245, 249, 1));
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+.light .glass-panel,
+body.light .glass-panel {
+  @apply border-slate-200 bg-white/80;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.ProseMirror {
+  @apply min-h-[180px] outline-none text-sm leading-6 text-slate-200;
+}
+
+body.light .ProseMirror {
+  @apply text-slate-700;
+}
